@@ -20,16 +20,8 @@
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   border-radius: 3rem;
-  border: 0.2rem solid $color-dark;
+  // border: 0.2rem solid $color-dark;
   color: #fff;
   background-color: $color-dark;
   transition: 0.3s;
-  &:hover {
-    background-color: transparent;
-    border-color: $color-gray;
-    color: $color-gray;
-  }
-  &:active {
-    transform: scale(0.96);
-  }
 }
