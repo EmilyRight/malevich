@@ -87,7 +87,7 @@
   .calc-grid {
     display: grid;
     // grid-template-rows: 40% 16% 26% auto;
-    grid-template-rows: 21rem 8rem 13rem 5rem;
+    grid-template-rows: 21rem 11rem 13rem 5rem;
     grid-template-columns: 47% 53%;
     font-family: $font1;
     background-color: #f3f5f6;
@@ -353,7 +353,7 @@
     //калькулятор десктоп
 
     .calc-grid {
-      grid-template-rows: 60% 15% 6%;
+      grid-template-rows: 60% 25% 6%;
       grid-template-columns: 47% 53%;
       margin: 0;
       flex-basis: 100%;
@@ -436,11 +436,6 @@
         left: 5%
       }
 
-      &__name-block {
-        font-family: $font1;
-        font-weight: 700;
-        margin-bottom: 3rem;
-      }
       &__name {
         letter-spacing: 0;
         padding: 0 1rem;
