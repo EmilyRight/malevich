@@ -1,7 +1,6 @@
 /* eslint-disable no-param-reassign */
-import { disabled } from 'express/lib/application';
-import devicesData from '../constants.js/devicesData';
-import { deviceLinkText, smartphoneLinkText } from '../constants.js/textContent';
+import devicesData from '../constants/devicesData';
+import { deviceLinkText, smartphoneLinkText } from '../constants/textContent';
 
 class Calculator {
   constructor() {

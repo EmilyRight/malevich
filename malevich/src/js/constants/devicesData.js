@@ -8,7 +8,7 @@ const devicesData = [
   {
     id: 1,
     type: 'device',
-    name: 'Видеокамера внутренняя Ростелком IPC8232SWC-WE FHD РТК ',
+    name: 'Видеокамера',
     imageSrc: cameraImg,
     maxDiscount: 1000,
     basePrice: 5990,
@@ -16,7 +16,7 @@ const devicesData = [
   {
     id: 2,
     type: 'device',
-    name: 'Умная колонка Капсула мини с Марусей VK',
+    name: 'VK Капсула Мини',
     imageSrc: capsImg,
     maxDiscount: 1000,
     basePrice: 6990,
@@ -25,7 +25,7 @@ const devicesData = [
   {
     id: 3,
     type: 'device',
-    name: 'Приставка IPTV Wink Sercomm STB 122A STB Android',
+    name: 'TV-приставка Wink',
     imageSrc: winkImg,
     maxDiscount: 2000,
     basePrice: 6990,
@@ -34,7 +34,7 @@ const devicesData = [
   {
     id: 4,
     type: 'smartphone',
-    name: 'Смартфон Infinix HOT 30 8/128Gb',
+    name: 'Infinix HOT 30 8/128Gb',
     imageSrc: smartphone30Img,
     maxDiscount: 4000,
     basePrice: 17990,
@@ -43,7 +43,7 @@ const devicesData = [
   {
     id: 5,
     type: 'smartphone',
-    name: 'Смартфон Infinix NOTE 30i 8/256',
+    name: 'Infinix NOTE 30i 8/256',
     imageSrc: smartphone30iImg,
     maxDiscount: 4000,
     basePrice: 21990,
