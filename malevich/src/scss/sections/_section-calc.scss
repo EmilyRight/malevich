@@ -283,10 +283,12 @@
       line-height: normal;
     }
   }
+  //--------------------------------------------------------------------desktop--------------------------
+
   @media (min-width: 768px) {
     .section-layer {
       flex-direction: row;
-      gap: 4vw;
+      gap: 2%;
       padding-bottom: 5rem;
     }
     .slider {
@@ -353,8 +355,8 @@
     //калькулятор десктоп
 
     .calc-grid {
-      grid-template-rows: 60% 25% 6%;
-      grid-template-columns: 47% 53%;
+      grid-template-rows: 60% 15% 6%;
+      grid-template-columns: 45% 55%;
       margin: 0;
       flex-basis: 100%;
       max-height: 80.7rem;
@@ -414,8 +416,9 @@
         grid-column: 1/2;
         grid-row: 3/3;
         text-align: center;
-        font-size: 2rem;
+        font-size: clamp(1rem, 1.5vw, 2rem);
         font-weight: 700;
+        // align-self: flex-end;
       }
       &__label_mobile {
         display: none;
@@ -433,14 +436,14 @@
         color: #fff;
         position: absolute;
         top: 40%;
-        left: 5%
+        left: 5%;
       }
 
       &__name {
         letter-spacing: 0;
         padding: 0 1rem;
         text-align: center;
-        font-size: 2.8rem;
+        font-size: clamp(2.5rem, 2.8vw, 2.8rem);
         max-width: 100%;
         margin: 0 auto;
       }
@@ -474,37 +477,43 @@
 
     .price {
       justify-content: center;
-      padding: 0.8rem;
+      padding-right: 0.8rem;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      // justify-content: space-between;
-      // align-items: flex-end;
+      flex-direction: row;
+      gap: 1rem;
+      justify-content: flex-start;
+      align-items: flex-end;
       // gap: 2.7rem;
       &__info {
-        // gap: 1rem;
-        // flex-direction: column;
-        // align-items: flex-start;
-        // justify-content: flex-end;
-        // margin-bottom: 0;
+        gap: 1rem;
+        width: 9rem;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        margin-bottom: 0;
+        min-width: 10vw;
+        max-width: 10rem;
       }
 
       &__old-price {
         order: 1;
+        width: auto;
         font-size: 2.4rem;
         font-size: clamp(1.4rem, 2vw, 2.4rem);
       }
 
       &__new-price {
+        width: auto;
+        // width: 9rem;
         font-size: 4.4rem;
-        font-size: clamp(2.4rem, 3vw, 4.4rem);
+        font-size: clamp(2rem, 2.5vw, 4.4rem);
       }
       &__button {
         display: inline;
         // max-height: 6rem;
         max-width: 17.5rem;
-        padding: 1.6rem 1.5rem;
+        font-size: clamp(1rem, 1.2vw, 1.6rem);
+        padding: 1.2vw 1vw;
         margin: 0;
       }
     }
