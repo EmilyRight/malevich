@@ -39,15 +39,19 @@
     -->
 
     <!-- GTM -->
-    <!--
-        <script>dataLayer = [{'pageType': 'Main', 'userId': '24487464'}];
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});let f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-XXXXX');
-        </script>
-    -->
+    <script>
+      dataLayer = [{ pageType: "Main", userId: "24487464" }];
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        let f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-54B5LLV");
+    </script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="./css/main.min.css" media="all" />
@@ -281,15 +285,7 @@
                 Сколько минут обменяем на&nbsp;скидку?
               </h3>
               <div class="calc-grid__input">
-                <div class="calc-grid__bg spots-line">
-                  <!-- <div class="spots-line__item" data-discount="500"></div>
-                  <div class="spots-line__item" data-discount="750"></div>
-                  <div class="spots-line__item" data-discount="1000"></div>
-                  <div class="spots-line__item" data-discount="1500"></div>
-                  <div class="spots-line__item" data-discount="2000"></div>
-                  <div class="spots-line__item" data-discount="3000"></div>
-                  <div class="spots-line__item" data-discount="4000"></div> -->
-                </div>
+                <div class="calc-grid__bg spots-line"></div>
                 <div class="calc-grid__line input-line">
                   <div class="input-line__item">
                     <input
@@ -298,7 +294,12 @@
                       id="500"
                       class="input-line__input"
                     />
-                    <label for="500" class="input-line__label">500</label>
+                    <label
+                      for="500"
+                      class="input-line__label device-context-elemen js-gtm-event"
+                      data-event="switcher"
+                      >500</label
+                    >
                   </div>
                   <div class="input-line__item">
                     <input
@@ -307,7 +308,12 @@
                       id="750"
                       class="input-line__input in-range"
                     />
-                    <label for="750" class="input-line__label">750</label>
+                    <label
+                      for="750"
+                      class="input-line__label device-context-element js-gtm-event"
+                      data-event="switcher"
+                      >750</label
+                    >
                   </div>
                   <div class="input-line__item">
                     <input
@@ -316,7 +322,12 @@
                       id="1000"
                       class="input-line__input"
                     />
-                    <label for="1000" class="input-line__label">1000</label>
+                    <label
+                      for="1000"
+                      class="input-line__label device-context-element js-gtm-event"
+                      data-event="switcher"
+                      >1000</label
+                    >
                   </div>
                   <div class="input-line__item">
                     <input
@@ -325,7 +336,12 @@
                       id="1500"
                       class="input-line__input"
                     />
-                    <label for="1500" class="input-line__label">1500</label>
+                    <label
+                      for="1500"
+                      class="input-line__label device-context-element js-gtm-event"
+                      data-event="switcher"
+                      >1500</label
+                    >
                   </div>
                   <div class="input-line__item">
                     <input
@@ -334,7 +350,12 @@
                       id="2000"
                       class="input-line__input"
                     />
-                    <label for="2000" class="input-line__label">2000</label>
+                    <label
+                      for="2000"
+                      class="input-line__label device-context-element js-gtm-event"
+                      data-event="switcher"
+                      >2000</label
+                    >
                   </div>
                   <div class="input-line__item">
                     <input
@@ -343,7 +364,12 @@
                       id="3000"
                       class="input-line__input"
                     />
-                    <label for="3000" class="input-line__label">3000</label>
+                    <label
+                      for="3000"
+                      class="input-line__label device-context-element js-gtm-event"
+                      data-event="switcher"
+                      >3000</label
+                    >
                   </div>
                   <div class="input-line__item">
                     <input
@@ -353,7 +379,12 @@
                       class="input-line__input"
                       disabled="true"
                     />
-                    <label for="4000" class="input-line__label">4000</label>
+                    <label
+                      for="4000"
+                      class="input-line__label device-context-element js-gtm-event"
+                      data-event="switcher"
+                      >4000</label
+                    >
                   </div>
                 </div>
               </div>
@@ -378,11 +409,17 @@
                 <div class="price__old-price">17&nbsp;990&nbsp;₽</div>
                 <div class="price__new-price">13&nbsp;990&nbsp;₽</div>
               </div>
-              <a href="" class="js-gtm-event btn btn-primary price__button"
+              <a
+                href=""
+                class="js-gtm-event btn btn-primary price__button device-context-element"
+                data-event="conv_minutes"
                 >Обменять минуты</a
               >
             </div>
-            <a href="" class="calc-grid__link link js-gtm-event"
+            <a
+              href=""
+              class="calc-grid__link link js-gtm-event device-context-element"
+              data-event="conv_eshop"
               >Ко&nbsp;всем смартфонам</a
             >
           </div>
@@ -402,11 +439,9 @@
                   </p>
 
                   <a
-                    href="https://tele2.ru/tariffs"
+                    href="https://tele2.ru/mixx-max"
                     class="btn btn--black js-gtm-event"
-                    data-event-category="conversions"
-                    data-event="button_join"
-                    data-section="section--join"
+                    data-event="conv_get-mixx"
                   >
                     <span class="btn__text">Подключить</span>
                     <svg
@@ -435,11 +470,9 @@
                   <p>Чтобы увеличить скидку</p>
 
                   <a
-                    href="https://tele2.ru/tariffs"
+                    href="https://tele2.ru/stock-exchange"
                     class="btn btn--black js-gtm-event"
-                    data-event-category="conversions"
-                    data-event="button_join"
-                    data-section="section--join"
+                    data-event="conv_more-minutes"
                   >
                     <span class="btn__text">Докупить минуты</span>
                     <svg
@@ -472,11 +505,6 @@
               </div>
             </li>
           </ul>
-          <div class="box-pic">
-            <div class="pic-layer">
-              <picture class="picture"> </picture>
-            </div>
-          </div>
         </div>
       </section>
       <section class="section section-faq">
@@ -488,7 +516,7 @@
                 <div class="item__header">
                   <div
                     class="item__title subtitle js-gtm-event"
-                    data-event="faq_discount"
+                    data-event="faq_get"
                     data-section="section-faq"
                   >
                     Как получить скидку на&nbsp;смартфоны или гаджеты
@@ -508,7 +536,7 @@
                         href="https://tele2.ru/offices"
                         class="link js-gtm-event"
                         target="_blank"
-                        data-event="link_offices"
+                        data-event="link_choose"
                         >Выберите устройство </a
                       >, которое хотите приобрести со&nbsp;скидкой,
                       и&nbsp;определите, какой размер скидки вам потребуется.
@@ -524,7 +552,7 @@
                         href="https://tele2.ru/offices"
                         class="link js-gtm-event"
                         target="_blank"
-                        data-event="link_offices"
+                        data-event="link_offline"
                         >в&nbsp;салоне связи Tele2</a
                       >
                       или при заказе
@@ -548,7 +576,7 @@
                 <div class="item__header">
                   <div
                     class="item__title subtitle js-gtm-event"
-                    data-event="faq_tariff"
+                    data-event="faq_promocode"
                     data-section="section-faq"
                   >
                     Полученный промокод можно применить для любой модели
@@ -572,7 +600,7 @@
                 <div class="item__header">
                   <div
                     class="item__title subtitle js-gtm-event"
-                    data-event="faq_number"
+                    data-event="faq_mixx"
                     data-section="section-faq"
                   >
                     Вы&nbsp;сказали, что с&nbsp;подпиской MiXX&nbsp;в два раза
@@ -588,10 +616,10 @@
                   <p class="small-text">
                     Если у&nbsp;вас есть
                     <a
-                      href="https://tele2.ru/shop/devices/smartphones"
+                      href="https://tele2.ru/mixx-max"
                       class="link js-gtm-event"
                       target="_blank"
-                      data-event="link_site"
+                      data-event="link_mixx"
                       >подписка MiXX</a
                     >, то&nbsp;на&nbsp;любой номинал скидки вы&nbsp;потратите
                     в&nbsp;два раза меньше минут, чем пользователи без подписки.
@@ -604,7 +632,7 @@
                 <div class="item__header">
                   <div
                     class="item__title subtitle js-gtm-event"
-                    data-event="faq_mixx"
+                    data-event="faq_change"
                     data-section="section-faq"
                   >
                     Могу&nbsp;ли я&nbsp;совершить несколько обменов минут?
@@ -626,7 +654,7 @@
                 <div class="item__header">
                   <div
                     class="item__title subtitle js-gtm-event"
-                    data-event="faq_insurance"
+                    data-event="faq_rubles"
                     data-section="section-faq"
                   >
                     Какую сумму скидок в&nbsp;рублях я&nbsp;могу получить
@@ -655,7 +683,7 @@
                 <div class="item__header">
                   <div
                     class="item__title subtitle js-gtm-event"
-                    data-event="faq_conditions"
+                    data-event="faq_who"
                     data-section="section-faq"
                   >
                     Кто может участвовать в&nbsp;акции?
@@ -670,10 +698,10 @@
                   <p class="small-text">
                     Активные абоненты Tele2&nbsp;
                     <a
-                      href="https://tele2.ru/offices"
+                      href="https://tele2.ru/tariffs"
                       class="link js-gtm-event"
                       target="_blank"
-                      data-event="link_offices"
+                      data-event="link_tariffs"
                       >с тарифами</a
                     >
                     &laquo;Black&raquo;, &laquo;Premium&raquo;,
@@ -744,7 +772,7 @@
                   class="app-links__item app-store-link js-gtm-event"
                   data-event="app-store-link"
                   data-section="section-app"
-                  href="https://redirect.appmetrica.yandex.com/serve/100063337051680389"
+                  href="https://redirect.appmetrica.yandex.com/serve/388563671611160636?utm_medium=app_link&utm_campaign=allforminutes"
                 >
                   <img
                     alt="appstore"
@@ -756,7 +784,7 @@
                   class="app-links__item playmarket-link js-gtm-event"
                   data-event="playmarket-link"
                   data-section="section-app"
-                  href="https://redirect.appmetrica.yandex.com/serve/100063337051680389"
+                  href="https://redirect.appmetrica.yandex.com/serve/388563671611160636?utm_medium=app_link&utm_campaign=allforminutes"
                 >
                   <img
                     alt="googleplay"
@@ -768,7 +796,7 @@
                   class="app-links__item app-gallery-link js-gtm-event"
                   data-event="app-gallery-link"
                   data-section="section-app"
-                  href="https://redirect.appmetrica.yandex.com/serve/892696892876571496"
+                  href="https://redirect.appmetrica.yandex.com/serve/388563671611160636?utm_medium=app_link&utm_campaign=allforminutes"
                 >
                   <img
                     alt="appgallery"

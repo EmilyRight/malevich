@@ -12,6 +12,7 @@ const devicesData = [
     imageSrc: cameraImg,
     maxDiscount: 1000,
     basePrice: 5990,
+    eventContext: 'rostelecom',
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ const devicesData = [
     imageSrc: capsImg,
     maxDiscount: 1000,
     basePrice: 6990,
+    eventContext: 'capsule',
   },
 
   {
@@ -29,6 +31,7 @@ const devicesData = [
     imageSrc: winkImg,
     maxDiscount: 2000,
     basePrice: 6990,
+    eventContext: 'wink',
   },
 
   {
@@ -38,6 +41,7 @@ const devicesData = [
     imageSrc: smartphone30Img,
     maxDiscount: 4000,
     basePrice: 17990,
+    eventContext: 'hot',
   },
 
   {
@@ -47,6 +51,7 @@ const devicesData = [
     imageSrc: smartphone30iImg,
     maxDiscount: 4000,
     basePrice: 21990,
+    eventContext: 'note',
   },
 ];
 export default devicesData;

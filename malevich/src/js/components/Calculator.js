@@ -8,6 +8,7 @@ class Calculator {
     this.inputs = document.querySelectorAll('.input-line__input');
     this.inputsBar = document.querySelector('.spots-line');
     this.devices = document.querySelectorAll('.device');
+    this.contextElements = document.querySelectorAll('.device-context-element');
     this.basePriceHtml = document.querySelector('.price__old-price');
     this.currentPriceHtml = document.querySelector('.price__new-price');
     this.activeDeviceImage = document.querySelector('.calc-grid__image');
@@ -16,10 +17,19 @@ class Calculator {
     this.activeDevice = devicesData[3];
     this.activeItem = [...this.devices].find((device) => this.activeDevice.id === +device.id);
     this.currentDiscount = this.activeDevice.maxDiscount;
-    console.log(this.activeDevice, this.currentDiscount);
     this.basePrice = this.activeDevice.basePrice;
     this.currentPrice = this.basePrice - this.currentDiscount;
+
     this.handleInputbar();
+    this.setContext();
+  }
+
+  setContext() {
+    const context = this.activeDevice.eventContext;
+
+    for (let i = 0; i < this.contextElements.length; i += 1) {
+      this.contextElements[i].dataset.context = `${context}`;
+    }
   }
 
   removeActiveClass() {
@@ -113,6 +123,7 @@ class Calculator {
     this.devices.forEach((device) => {
       device.addEventListener('click', () => {
         this.setActiveDevice(device);
+        this.setContext();
         this.showDeviceInfo();
       });
     });
