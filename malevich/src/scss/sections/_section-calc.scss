@@ -87,7 +87,7 @@
   .calc-grid {
     display: grid;
     // grid-template-rows: 40% 16% 26% auto;
-    grid-template-rows: 21rem 11rem 13rem 5rem;
+    grid-template-rows: 21rem 8rem 13rem 5rem;
     grid-template-columns: 47% 53%;
     font-family: $font1;
     background-color: #f3f5f6;
@@ -113,7 +113,7 @@
 
     &__input {
       position: relative;
-      width: 92%;
+      width: 90%;
       max-width: 38rem;
       margin: 0 auto;
       height: 5rem;
