@@ -82,9 +82,23 @@
       display: none;
     }
   }
-  .btn--black {
-  }
-  .js-gtm-event {
+
+  .mixx-card_1 {
+    .box-pic {
+      &::before {
+        position: absolute;
+        content: '';
+        width: 15rem;
+        height: 15rem;
+        background-color: #fff;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        will-change: filter;
+        -webkit-filter: blur(60px);
+        filter: blur(60px);
+      }
+    }
   }
   .box-pic {
     position: absolute;
@@ -191,6 +205,8 @@
     .box-pic {
       height: 100%;
     }
+
+
     .pic-layer {
       display: flex;
       align-items: center;

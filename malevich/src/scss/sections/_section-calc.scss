@@ -281,7 +281,7 @@
       width: 10rem;
       font-style: normal;
       font-weight: 400;
-      line-height: normal;
+      line-height: 1;
     }
   }
   //--------------------------------------------------------------------desktop--------------------------
@@ -357,7 +357,7 @@
     //калькулятор десктоп
 
     .calc-grid {
-      grid-template-rows: 60% 15% 6%;
+      grid-template-rows: 60% 17% 6%;
       grid-template-columns: 45% 55%;
       margin: 0;
       flex-basis: 100%;
@@ -409,6 +409,7 @@
         grid-column: 1/2;
         grid-row: 2/3;
         margin: 0;
+
       }
       &__price {
         grid-column: 2/3;
@@ -420,7 +421,8 @@
         text-align: center;
         font-size: clamp(1rem, 1.5vw, 2rem);
         font-weight: 700;
-        // align-self: flex-end;
+        align-self: flex-end;
+
       }
       &__label_mobile {
         display: none;
@@ -448,6 +450,7 @@
         font-size: clamp(2.5rem, 2.8vw, 2.8rem);
         max-width: 100%;
         margin: 0 auto;
+        max-width: 90%;
       }
     }
 

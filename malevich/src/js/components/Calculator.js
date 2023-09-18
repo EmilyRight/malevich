@@ -20,6 +20,7 @@ class Calculator {
     this.basePrice = this.activeDevice.basePrice;
     this.currentPrice = this.basePrice - this.currentDiscount;
 
+    this.setLinkHref();
     this.handleInputbar();
     this.setContext();
   }
@@ -59,6 +60,10 @@ class Calculator {
     this.handleInputbar();
   }
 
+  setLinkHref() {
+    this.activeDeviceLink.setAttribute('href', this.activeDevice.link);
+  }
+
   showDeviceInfo() {
     const {
       name, imageSrc, basePrice, type,
@@ -69,6 +74,7 @@ class Calculator {
     this.activeDeviceLink.innerHTML = type === 'smartphone'
       ? smartphoneLinkText
       : deviceLinkText;
+    this.setLinkHref();
     this.showDevicePrices();
   }
 

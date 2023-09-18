@@ -8,30 +8,33 @@ const devicesData = [
   {
     id: 1,
     type: 'device',
-    name: 'Видеокамера',
+    name: 'Видеокамера Ростелеком',
     imageSrc: cameraImg,
     maxDiscount: 1000,
-    basePrice: 5990,
+    basePrice: 4000,
     eventContext: 'rostelecom',
+    link: 'https://tele2.ru/shop/devices/gadgets?sortingType=pop',
   },
   {
     id: 2,
     type: 'device',
-    name: 'VK Капсула Мини',
+    name: 'VK&nbsp;Капсула мини с&nbsp;Марусей',
     imageSrc: capsImg,
     maxDiscount: 1000,
     basePrice: 6990,
     eventContext: 'capsule',
+    link: 'https://tele2.ru/shop/devices/gadgets?sortingType=pop',
   },
 
   {
     id: 3,
     type: 'device',
-    name: 'TV-приставка Wink',
+    name: 'TV-приставка Wink+',
     imageSrc: winkImg,
     maxDiscount: 2000,
     basePrice: 6990,
     eventContext: 'wink',
+    link: 'https://tele2.ru/shop/devices/gadgets?sortingType=pop',
   },
 
   {
@@ -42,6 +45,7 @@ const devicesData = [
     maxDiscount: 4000,
     basePrice: 17990,
     eventContext: 'hot',
+    link: 'https://tele2.ru/shop/devices/smartphones',
   },
 
   {
@@ -52,6 +56,7 @@ const devicesData = [
     maxDiscount: 4000,
     basePrice: 21990,
     eventContext: 'note',
+    link: 'https://tele2.ru/shop/devices/smartphones',
   },
 ];
 export default devicesData;
