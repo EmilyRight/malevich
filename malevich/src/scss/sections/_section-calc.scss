@@ -36,8 +36,14 @@
       flex-direction: column;
       align-items: center;
       transition: 0.4s;
-      &.active {
+      &__item:not(.devices__item_last) {
+        cursor: pointer;
+      }
+      &.active:not(.devices__item_last) {
         border: 0.1rem solid #3fcbff;
+        box-shadow: 2px 1px 6px 0px rgba(0, 0, 0, 0.22);
+      }
+      &:hover:not(.devices__item_last) {
         box-shadow: 2px 1px 6px 0px rgba(0, 0, 0, 0.22);
       }
       &_last {
@@ -319,6 +325,7 @@
         height: 19.8rem;
         border-radius: 2.5rem;
         padding: 2.1rem 1.5rem;
+
         &_last {
           justify-content: center;
           .devices-item__name {
@@ -409,7 +416,6 @@
         grid-column: 1/2;
         grid-row: 2/3;
         margin: 0;
-
       }
       &__price {
         grid-column: 2/3;
@@ -422,7 +428,6 @@
         font-size: clamp(1rem, 1.5vw, 2rem);
         font-weight: 700;
         align-self: flex-end;
-
       }
       &__label_mobile {
         display: none;
