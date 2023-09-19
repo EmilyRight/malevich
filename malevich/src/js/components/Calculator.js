@@ -6,6 +6,7 @@ class Calculator {
   constructor() {
     this.labels = document.querySelectorAll('.input-line__label');
     this.inputs = document.querySelectorAll('.input-line__input');
+    this.maxDiscountLabels = document.querySelectorAll('.input-line__range_max');
     this.inputsBar = document.querySelector('.spots-line');
     this.devices = document.querySelectorAll('.device');
     this.contextElements = document.querySelectorAll('.device-context-element');
@@ -16,10 +17,11 @@ class Calculator {
     this.activeDeviceLink = document.querySelector('.calc-grid__link');
     this.activeDevice = devicesData[3];
     this.activeItem = [...this.devices].find((device) => this.activeDevice.id === +device.id);
-    this.currentDiscount = this.activeDevice.maxDiscount;
+    this.currentDiscount = this.activeDevice.averageDiscount;
     this.basePrice = this.activeDevice.basePrice;
     this.currentPrice = this.basePrice - this.currentDiscount;
-
+    this.setMaxDiscount();
+    this.showDevicePrices();
     this.setLinkHref();
     this.handleInputbar();
     this.setContext();
@@ -55,7 +57,7 @@ class Calculator {
     this.removeDisabledInputs();
     this.activeDevice = devicesData.find((device) => device.id === +item.id);
     this.activeItem = item;
-    this.currentDiscount = this.activeDevice.maxDiscount;
+    this.currentDiscount = this.activeDevice.averageDiscount;
     item.classList.add('active');
     this.handleInputbar();
   }
@@ -85,7 +87,7 @@ class Calculator {
 
     const currentPriceArray = (basePrice - this.currentDiscount).toString().split('');
     currentPriceArray.splice(-3, 0, ' ');
-
+    console.log(basePriceArray.join(''));
     this.basePriceHtml.innerHTML = `${basePriceArray.join('')}&nbsp;₽`;
     this.currentPriceHtml.innerHTML = `${currentPriceArray.join('')}&nbsp;₽`;
   }
@@ -94,9 +96,7 @@ class Calculator {
     const { discount } = this.activeItem.dataset;
     this.removeDisabledInputs();
     this.inputs.forEach((input, index) => {
-      if (input.id === discount
-        || input.id === this.currentDiscount
-        || Number(input.id) < Number(discount)) {
+      if (Number(input.id) <= this.currentDiscount) {
         input.checked = true;
         input.classList.add('in-range');
         this.inputsBar.style.backgroundImage = `linear-gradient(to right, #3fcbff ${(100 / 6) * index}%, #d3d9df ${(100 / 6) * index}%)`;
@@ -125,19 +125,36 @@ class Calculator {
     }
   }
 
+  setMaxDiscount() {
+    this.removeMaxDiscount();
+    this.maxDiscountLabels.forEach((item) => {
+      if (Number(item.dataset.maxdiscount) === this.activeDevice.maxDiscount) {
+        item.classList.add('active');
+      }
+    });
+  }
+
+  removeMaxDiscount() {
+    this.maxDiscountLabels.forEach((item) => {
+      if (item.classList.contains('active')) {
+        item.classList.remove('active');
+      }
+    });
+  }
+
   addEventListeners() {
     this.devices.forEach((device) => {
       device.addEventListener('click', () => {
         this.setActiveDevice(device);
         this.setContext();
         this.showDeviceInfo();
+        this.setMaxDiscount();
       });
     });
 
     this.labels.forEach((input) => {
       input.addEventListener('click', (event) => {
         this.handleDiscountChoice(event);
-        // this.handleInputbar();
       });
     });
   }
