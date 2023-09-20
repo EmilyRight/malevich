@@ -15,11 +15,12 @@ class Calculator {
     this.activeDeviceImage = document.querySelector('.calc-grid__image');
     this.activeDeviceName = document.querySelector('.calc-grid__name');
     this.activeDeviceLink = document.querySelector('.calc-grid__link');
-    this.activeDevice = devicesData[0];
+    [this.activeDevice] = devicesData;
     this.activeItem = [...this.devices].find((device) => this.activeDevice.id === +device.id);
     this.currentDiscount = this.activeDevice.averageDiscount;
     this.basePrice = this.activeDevice.basePrice;
     this.currentPrice = this.basePrice - this.currentDiscount;
+    this.setActiveListItem();
     this.setMaxDiscount();
     this.showDevicePrices();
     this.setLinkHref();
@@ -27,20 +28,21 @@ class Calculator {
     this.setContext();
   }
 
-  setContext() {
-    const context = this.activeDevice.eventContext;
-
-    for (let i = 0; i < this.contextElements.length; i += 1) {
-      this.contextElements[i].dataset.context = `${context}`;
-    }
-  }
-
-  removeActiveClass() {
+  setActiveListItem() {
     this.devices.forEach((device) => {
       if (device.classList.contains('active')) {
         device.classList.remove('active');
+      } else if (Number(device.id) === this.activeDevice.id) {
+        device.classList.add('active');
       }
     });
+  }
+
+  setContext() {
+    const context = this.activeDevice.eventContext;
+    for (let i = 0; i < this.contextElements.length; i += 1) {
+      this.contextElements[i].dataset.context = `${context}`;
+    }
   }
 
   removeDisabledInputs() {
@@ -53,7 +55,7 @@ class Calculator {
   }
 
   setActiveDevice(item) {
-    this.removeActiveClass();
+    this.setActiveListItem();
     this.removeDisabledInputs();
     this.activeDevice = devicesData.find((device) => device.id === +item.id);
     this.activeItem = item;
@@ -68,7 +70,7 @@ class Calculator {
 
   showDeviceInfo() {
     const {
-      name, imageSrc, basePrice, type,
+      name, imageSrc, type,
     } = this.activeDevice;
     this.activeDeviceImage.src = imageSrc;
     this.activeDeviceName.innerHTML = name;
