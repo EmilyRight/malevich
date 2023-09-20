@@ -37,9 +37,7 @@
       align-items: center;
       transition: 0.4s;
       cursor: pointer;
-      &.devices__item_last {
-        cursor: auto;
-      }
+
       &.active:not(.devices__item_last) {
         border: 0.1rem solid #3fcbff;
         box-shadow: 2px 1px 6px 0px rgba(0, 0, 0, 0.22);
@@ -51,11 +49,16 @@
         background: var(--blue-primary, #3fcbff);
         color: #fff;
         align-items: flex-start;
+        .devices-item__link {
+          height: 100%;
+          width: 100%;
+        }
         .devices-item__name {
           text-align: left;
           margin-bottom: 0.5rem;
+          color: #fff;
         }
-        .devices-item__link {
+        .devices-item__icon {
           width: 3rem;
           height: 3rem;
           display: flex;
@@ -214,7 +217,7 @@
     &__range {
       position: absolute;
       top: -3.5rem;
-      transition: .4s;
+      transition: 0.4s;
     }
     &__range_max {
       opacity: 0;
@@ -229,6 +232,7 @@
     input[type="radio"]:checked + label {
       font-size: 1.6rem;
       color: $color-dark;
+      cursor: pointer;
     }
 
     input[type="radio"]:disabled + label {
@@ -241,6 +245,8 @@
       top: -0.7rem;
       background-color: var(--gray-day-300, #3fcbff);
       fill: var(--blue-primary, #3fcbff);
+      will-change: filter;
+      -webkit-filter: drop-shadow(-2px 0px 7px rgba(0, 0, 0, 0.31));
       filter: drop-shadow(-2px 0px 7px rgba(0, 0, 0, 0.31));
     }
     input[type="radio"].in-range + label::before {
@@ -251,12 +257,13 @@
       transition: 0.4s;
       padding-top: 2.4rem;
       font-size: 1.2rem;
-      // color: var(--gray-day-300, #a2abb4);
+      cursor: pointer;
       color: $color-dark;
       font-family: $font1;
       position: relative;
       min-width: 4rem;
       text-align: center;
+      user-select: none;
       &::before {
         content: "";
         width: 1.2rem;
@@ -327,6 +334,7 @@
       padding-bottom: 0;
       display: flex;
       flex-wrap: wrap;
+      justify-content: flex-end;
       gap: 1rem;
     }
 
@@ -346,6 +354,11 @@
             margin-bottom: 3rem;
           }
           .devices-item__link {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+          .devices-item__icon {
             width: 3.9rem;
             height: 3.9rem;
             margin-bottom: 0.5rem;

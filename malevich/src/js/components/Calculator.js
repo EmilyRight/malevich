@@ -15,7 +15,7 @@ class Calculator {
     this.activeDeviceImage = document.querySelector('.calc-grid__image');
     this.activeDeviceName = document.querySelector('.calc-grid__name');
     this.activeDeviceLink = document.querySelector('.calc-grid__link');
-    this.activeDevice = devicesData[3];
+    this.activeDevice = devicesData[0];
     this.activeItem = [...this.devices].find((device) => this.activeDevice.id === +device.id);
     this.currentDiscount = this.activeDevice.averageDiscount;
     this.basePrice = this.activeDevice.basePrice;
@@ -87,7 +87,7 @@ class Calculator {
 
     const currentPriceArray = (basePrice - this.currentDiscount).toString().split('');
     currentPriceArray.splice(-3, 0, ' ');
-    console.log(basePriceArray.join(''));
+
     this.basePriceHtml.innerHTML = `${basePriceArray.join('')}&nbsp;₽`;
     this.currentPriceHtml.innerHTML = `${currentPriceArray.join('')}&nbsp;₽`;
   }

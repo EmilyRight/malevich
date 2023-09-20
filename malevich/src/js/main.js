@@ -2,26 +2,23 @@ import $ from 'jquery';
 import { WOW } from './vendor/wow.min';
 import detectDevice from './components/detectDevice';
 
-import { closeModal, openModal } from './components/modal';
-import {
-  fieldListener, validateFields, keyField, prepField,
-} from './components/inputs';
-import generateId from './components/utils';
 import GTMEvents from './components/gtmEvents';
 import Calculator from './components/Calculator';
+import videoTeaser from './components/videoTeaser';
 
 const GTM = new GTMEvents();
 const calculator = new Calculator();
 window.jQuery = window.$ = $;
 /// /////// DocReady //////////
 window.addEventListener('load', () => {
-  detectDevice(); // videoTeaser();
+  detectDevice();
+  videoTeaser();
   new WOW().init();
   calculator.addEventListeners();
   GTM.addEventListeners();
   goNextSection();
   handleFaqOpening();
-  scrollTeaser(document.querySelector('.teaser-next'));
+  scrollTeaser(document.querySelector('.section-about'));
 });
 
 function goNextSection() {
