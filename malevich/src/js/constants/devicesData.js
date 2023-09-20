@@ -14,7 +14,7 @@ const devicesData = [
     averageDiscount: 1500,
     basePrice: 17990,
     eventContext: 'hot',
-    link: 'https://tele2.ru/shop/devices/smartphones',
+    link: 'https://tele2.ru/shop/devices/smartphones?promo=9300004',
   },
 
   {
@@ -62,7 +62,7 @@ const devicesData = [
     averageDiscount: 1500,
     basePrice: 21990,
     eventContext: 'note',
-    link: 'https://tele2.ru/shop/devices/smartphones',
+    link: 'https://tele2.ru/shop/devices/smartphones?promo=9300004',
   },
 ];
 export default devicesData;
